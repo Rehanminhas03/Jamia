@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import {
   BookOpen,
@@ -14,11 +15,14 @@ import type { LucideIcon } from "lucide-react";
 import type { Metadata } from "next";
 
 import { Container } from "@/components/ui/Container";
-import { IslamicArt } from "@/components/ui/IslamicArt";
 import { PageHero } from "@/components/shared/PageHero";
 import { Breadcrumb } from "@/components/shared/Breadcrumb";
 import { AnimatedSection } from "@/components/shared/AnimatedSection";
-import { allDepartments, pageArt, type DepartmentIcon } from "@/lib/data";
+import {
+  allDepartments,
+  pageHeroImages,
+  type DepartmentIcon,
+} from "@/lib/data";
 
 const iconMap: Record<DepartmentIcon, LucideIcon> = {
   "book-open": BookOpen,
@@ -50,7 +54,7 @@ export default async function DepartmentsPage({ params }: Props) {
         eyebrow={t("pageEyebrow")}
         title={t("pageTitle")}
         description={t("pageDescription")}
-        mood={pageArt.departments.mood}
+        image={pageHeroImages.departments}
         breadcrumb={
           <Breadcrumb
             trail={[
@@ -73,7 +77,17 @@ export default async function DepartmentsPage({ params }: Props) {
                     className="group flex h-full flex-col overflow-hidden rounded-2xl border border-primary-100/60 bg-white shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-lift"
                   >
                     <div className="relative aspect-[16/10] overflow-hidden">
-                      <IslamicArt mood={dept.mood} icon={Icon} />
+                      <Image
+                        src={dept.image}
+                        alt=""
+                        fill
+                        sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                        className="object-cover transition-transform duration-700 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-primary-900/60 via-primary-900/10 to-transparent" />
+                      <span className="absolute start-5 bottom-5 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-cream/95 text-primary shadow-soft">
+                        <Icon className="h-5 w-5" aria-hidden="true" />
+                      </span>
                     </div>
                     <div className="flex flex-1 flex-col p-7">
                       <h3 className="font-display text-xl text-primary">

@@ -1,34 +1,21 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
+import Image from "next/image";
 import { useLocale, useTranslations } from "next-intl";
 import { AnimatePresence, motion } from "framer-motion";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
-import {
-  ChevronLeft,
-  ChevronRight,
-  BookOpen,
-  Feather,
-  Users,
-} from "lucide-react";
-import type { LucideIcon } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 import { Link } from "@/i18n/navigation";
 import { isRtl } from "@/i18n/routing";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
-import { IslamicArt } from "@/components/ui/IslamicArt";
 import { heroSlides } from "@/lib/data";
 import { cn } from "@/lib/utils";
 
 const slideIds = heroSlides.map((s) => s.id);
-
-const slideIcons: Record<string, LucideIcon> = {
-  knowledge: BookOpen,
-  calligraphy: Feather,
-  students: Users,
-};
 
 export function Hero() {
   const t = useTranslations("home.hero.slides");
@@ -66,64 +53,64 @@ export function Hero() {
     <section className="relative -mt-20 overflow-hidden bg-primary text-cream">
       <div ref={emblaRef} className="overflow-hidden">
         <div className="flex">
-          {heroSlides.map((slide, idx) => {
-            const Icon = slideIcons[slide.id] ?? BookOpen;
-            return (
-              <div
-                key={slide.id}
-                className="relative h-[88vh] min-h-[560px] w-full shrink-0 grow-0 basis-full"
-              >
-                <IslamicArt
-                  mood={slide.mood}
-                  icon={Icon}
-                  className="absolute inset-0 -z-10"
-                />
-                <div className="absolute inset-0 bg-gradient-to-b from-primary-900/75 via-primary-900/55 to-primary-900/80" />
-                <div className="absolute inset-0 flex items-center">
-                  <Container>
-                    <AnimatePresence mode="wait">
-                      {selected === idx ? (
-                        <motion.div
-                          key={slide.id}
-                          initial={{ opacity: 0, y: 24 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          exit={{ opacity: 0, y: -24 }}
-                          transition={{
-                            duration: 0.7,
-                            ease: [0.22, 1, 0.36, 1],
-                          }}
-                          className="max-w-2xl"
-                        >
-                          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-accent">
-                            {t(`${slideIds[idx]}.eyebrow`)}
-                          </p>
-                          <h1 className="font-display text-4xl leading-tight text-cream sm:text-5xl md:text-6xl lg:text-[4rem]">
-                            {t(`${slideIds[idx]}.title`)}
-                          </h1>
-                          <p className="mt-5 max-w-xl text-base leading-relaxed text-cream/85 sm:text-lg">
-                            {t(`${slideIds[idx]}.subtitle`)}
-                          </p>
-                          <div className="mt-8 flex flex-wrap items-center gap-3">
-                            <Button as={Link} href="/admissions" size="lg">
-                              {tCommon("apply")}
-                            </Button>
-                            <Button
-                              as={Link}
-                              href="/courses"
-                              size="lg"
-                              variant="outline"
-                            >
-                              {tCommon("exploreCourses")}
-                            </Button>
-                          </div>
-                        </motion.div>
-                      ) : null}
-                    </AnimatePresence>
-                  </Container>
-                </div>
+          {heroSlides.map((slide, idx) => (
+            <div
+              key={slide.id}
+              className="relative h-[88vh] min-h-[560px] w-full shrink-0 grow-0 basis-full"
+            >
+              <Image
+                src={slide.image}
+                alt=""
+                fill
+                priority={idx === 0}
+                sizes="100vw"
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-b from-primary-900/80 via-primary-900/55 to-primary-900/85" />
+              <div className="absolute inset-0 flex items-center">
+                <Container>
+                  <AnimatePresence mode="wait">
+                    {selected === idx ? (
+                      <motion.div
+                        key={slide.id}
+                        initial={{ opacity: 0, y: 24 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -24 }}
+                        transition={{
+                          duration: 0.7,
+                          ease: [0.22, 1, 0.36, 1],
+                        }}
+                        className="max-w-2xl"
+                      >
+                        <p className="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-accent">
+                          {t(`${slideIds[idx]}.eyebrow`)}
+                        </p>
+                        <h1 className="font-display text-4xl leading-tight text-cream sm:text-5xl md:text-6xl lg:text-[4rem]">
+                          {t(`${slideIds[idx]}.title`)}
+                        </h1>
+                        <p className="mt-5 max-w-xl text-base leading-relaxed text-cream/85 sm:text-lg">
+                          {t(`${slideIds[idx]}.subtitle`)}
+                        </p>
+                        <div className="mt-8 flex flex-wrap items-center gap-3">
+                          <Button as={Link} href="/admissions" size="lg">
+                            {tCommon("apply")}
+                          </Button>
+                          <Button
+                            as={Link}
+                            href="/courses"
+                            size="lg"
+                            variant="outline"
+                          >
+                            {tCommon("exploreCourses")}
+                          </Button>
+                        </div>
+                      </motion.div>
+                    ) : null}
+                  </AnimatePresence>
+                </Container>
               </div>
-            );
-          })}
+            </div>
+          ))}
         </div>
       </div>
 

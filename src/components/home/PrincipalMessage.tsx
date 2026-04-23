@@ -1,18 +1,23 @@
+import Image from "next/image";
 import { useTranslations } from "next-intl";
-import { Quote, UserCircle2 } from "lucide-react";
+import { Quote } from "lucide-react";
 
 import { Container } from "@/components/ui/Container";
-import { IslamicArt } from "@/components/ui/IslamicArt";
 import { AnimatedSection } from "@/components/shared/AnimatedSection";
+import { principalImage, principalBackdrop } from "@/lib/data";
 
 export function PrincipalMessage() {
   const t = useTranslations("home.principal");
 
   return (
     <section className="relative isolate overflow-hidden bg-cream-100 py-20 sm:py-24">
-      <div className="absolute inset-0 -z-20 opacity-[0.08]">
-        <IslamicArt mood="sage" />
-      </div>
+      <Image
+        src={principalBackdrop}
+        alt=""
+        fill
+        sizes="100vw"
+        className="-z-20 object-cover opacity-[0.08]"
+      />
       <div
         className="absolute inset-0 -z-10 bg-gradient-to-b from-cream-100 via-cream-100/95 to-cream-100"
         aria-hidden="true"
@@ -22,7 +27,13 @@ export function PrincipalMessage() {
           <div className="grid items-center gap-10 md:grid-cols-[280px_1fr] lg:gap-16">
             <div className="relative mx-auto md:mx-0">
               <div className="relative h-56 w-56 overflow-hidden rounded-full ring-4 ring-accent/40 ring-offset-4 ring-offset-cream-100 sm:h-64 sm:w-64">
-                <IslamicArt mood="deep" icon={UserCircle2} />
+                <Image
+                  src={principalImage}
+                  alt=""
+                  fill
+                  sizes="280px"
+                  className="object-cover"
+                />
               </div>
               <span
                 className="absolute -bottom-2 start-1/2 inline-flex h-10 w-10 -translate-x-1/2 items-center justify-center rounded-full bg-accent text-cream shadow-soft"

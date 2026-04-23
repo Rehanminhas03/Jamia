@@ -3,8 +3,12 @@ import createNextIntlPlugin from "next-intl/plugin";
 
 const withNextIntl = createNextIntlPlugin("./src/i18n/request.ts");
 
-// Imagery is rendered entirely by the <IslamicArt /> SVG component — no
-// remote photo hosts are needed. Left empty intentionally.
-const nextConfig: NextConfig = {};
+const nextConfig: NextConfig = {
+  images: {
+    remotePatterns: [
+      { protocol: "https", hostname: "images.unsplash.com" },
+    ],
+  },
+};
 
 export default withNextIntl(nextConfig);

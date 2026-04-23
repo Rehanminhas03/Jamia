@@ -1,7 +1,8 @@
 import type { ReactNode } from "react";
+import Image from "next/image";
 
 import { Container } from "@/components/ui/Container";
-import { IslamicArt, type IslamicArtMood } from "@/components/ui/IslamicArt";
+import { IslamicPattern } from "@/components/ui/IslamicPattern";
 import { cn } from "@/lib/utils";
 
 type Props = {
@@ -9,7 +10,8 @@ type Props = {
   title: ReactNode;
   description?: ReactNode;
   breadcrumb?: ReactNode;
-  mood?: IslamicArtMood;
+  image?: string;
+  imageAlt?: string;
   className?: string;
 };
 
@@ -18,7 +20,8 @@ export function PageHero({
   title,
   description,
   breadcrumb,
-  mood = "deep",
+  image,
+  imageAlt = "",
   className,
 }: Props) {
   return (
@@ -28,13 +31,25 @@ export function PageHero({
         className,
       )}
     >
-      <div className="absolute inset-0 -z-20">
-        <IslamicArt mood={mood} />
+      {image ? (
+        <>
+          <Image
+            src={image}
+            alt={imageAlt}
+            fill
+            priority
+            sizes="100vw"
+            className="-z-20 object-cover"
+          />
+          <div
+            className="absolute inset-0 -z-10 bg-gradient-to-b from-primary-900/85 via-primary-900/70 to-primary-900/90"
+            aria-hidden="true"
+          />
+        </>
+      ) : null}
+      <div className="absolute inset-0 -z-10 text-cream opacity-[0.07]">
+        <IslamicPattern variant="geometric" />
       </div>
-      <div
-        className="absolute inset-0 -z-10 bg-gradient-to-b from-primary-900/70 via-primary-900/55 to-primary-900/80"
-        aria-hidden="true"
-      />
       <div className="absolute inset-x-0 bottom-0 -z-10 h-32 bg-gradient-to-t from-primary-700/60 to-transparent" />
       <Container className="relative py-20 sm:py-24 lg:py-28">
         <div className="max-w-3xl">

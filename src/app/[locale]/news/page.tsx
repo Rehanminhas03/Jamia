@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import { PageHero } from "@/components/shared/PageHero";
 import { Breadcrumb } from "@/components/shared/Breadcrumb";
 import { NewsGrid } from "@/components/news/NewsGrid";
-import { pageArt } from "@/lib/data";
+import { pageHeroImages } from "@/lib/data";
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -25,7 +25,7 @@ export default async function NewsPage({ params }: Props) {
         eyebrow={t("pageEyebrow")}
         title={t("pageTitle")}
         description={t("pageDescription")}
-        mood={pageArt.news.mood}
+        image={pageHeroImages.news}
         breadcrumb={
           <Breadcrumb
             trail={[

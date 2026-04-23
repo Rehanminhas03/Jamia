@@ -8,7 +8,7 @@ import { PageHero } from "@/components/shared/PageHero";
 import { Breadcrumb } from "@/components/shared/Breadcrumb";
 import { AnimatedSection } from "@/components/shared/AnimatedSection";
 import { ApplicationForm } from "@/components/admissions/ApplicationForm";
-import { admissionSteps, eligibilityIds, documentIds, pageArt } from "@/lib/data";
+import { admissionSteps, eligibilityIds, documentIds, pageHeroImages } from "@/lib/data";
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -29,7 +29,7 @@ export default async function AdmissionsPage({ params }: Props) {
         eyebrow={t("pageEyebrow")}
         title={t("pageTitle")}
         description={t("pageDescription")}
-        mood={pageArt.admissions.mood}
+        image={pageHeroImages.admissions}
         breadcrumb={
           <Breadcrumb
             trail={[

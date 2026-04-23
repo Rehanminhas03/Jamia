@@ -1,10 +1,10 @@
+import Image from "next/image";
 import { useTranslations } from "next-intl";
-import { BookOpen } from "lucide-react";
 
 import { Container } from "@/components/ui/Container";
 import { SectionTitle } from "@/components/ui/SectionTitle";
-import { IslamicArt } from "@/components/ui/IslamicArt";
 import { AnimatedSection } from "@/components/shared/AnimatedSection";
+import { introImage } from "@/lib/data";
 
 export function Intro() {
   const t = useTranslations("home.intro");
@@ -28,7 +28,13 @@ export function Intro() {
           <AnimatedSection delay={0.15} className="relative">
             <div className="relative mx-auto aspect-[3/4] max-w-md">
               <div className="arch-frame relative h-full w-full shadow-lift ring-1 ring-primary-100">
-                <IslamicArt mood="deep" icon={BookOpen} frame="arch" />
+                <Image
+                  src={introImage}
+                  alt=""
+                  fill
+                  sizes="(min-width: 1024px) 480px, 90vw"
+                  className="object-cover"
+                />
               </div>
               <div
                 className="pointer-events-none absolute -bottom-6 -end-6 h-32 w-32 rounded-full border-2 border-accent/40"
