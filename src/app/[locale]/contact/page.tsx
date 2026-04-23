@@ -7,7 +7,7 @@ import { PageHero } from "@/components/shared/PageHero";
 import { Breadcrumb } from "@/components/shared/Breadcrumb";
 import { AnimatedSection } from "@/components/shared/AnimatedSection";
 import { ContactForm } from "@/components/contact/ContactForm";
-import { contactInfo, pageHeroImages } from "@/lib/data";
+import { contactInfo, pageArt } from "@/lib/data";
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -29,7 +29,7 @@ export default async function ContactPage({ params }: Props) {
         eyebrow={t("pageEyebrow")}
         title={t("pageTitle")}
         description={t("pageDescription")}
-        image={pageHeroImages.contact}
+        mood={pageArt.contact.mood}
         breadcrumb={
           <Breadcrumb
             trail={[

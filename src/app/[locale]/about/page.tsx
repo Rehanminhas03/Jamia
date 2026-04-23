@@ -1,16 +1,38 @@
-import Image from "next/image";
 import { setRequestLocale, getTranslations } from "next-intl/server";
-import { Heart, Compass, Shield, Lightbulb } from "lucide-react";
+import {
+  Heart,
+  Compass,
+  Shield,
+  Lightbulb,
+  Eye,
+  Target,
+  ScrollText,
+} from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import type { Metadata } from "next";
 
 import { Container } from "@/components/ui/Container";
 import { SectionTitle } from "@/components/ui/SectionTitle";
+import { IslamicArt, type IslamicArtMood } from "@/components/ui/IslamicArt";
 import { PageHero } from "@/components/shared/PageHero";
 import { Breadcrumb } from "@/components/shared/Breadcrumb";
 import { AnimatedSection } from "@/components/shared/AnimatedSection";
 import { StatsCounter } from "@/components/shared/StatsCounter";
-import { aboutImages, coreValues, pageHeroImages, type CoreValue } from "@/lib/data";
+import { coreValues, pageArt, type CoreValue } from "@/lib/data";
+
+type SectionKey = "vision" | "mission" | "history";
+
+const sectionIcons: Record<SectionKey, LucideIcon> = {
+  vision: Eye,
+  mission: Target,
+  history: ScrollText,
+};
+
+const sectionMoods: Record<SectionKey, IslamicArtMood> = {
+  vision: "deep",
+  mission: "warm",
+  history: "gold",
+};
 
 const valueIcons: Record<CoreValue["icon"], LucideIcon> = {
   heart: Heart,
@@ -32,11 +54,11 @@ export default async function AboutPage({ params }: Props) {
   setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "about" });
 
-  const sections = [
-    { key: "vision", image: aboutImages.vision, reverse: false },
-    { key: "mission", image: aboutImages.mission, reverse: true },
-    { key: "history", image: aboutImages.history, reverse: false },
-  ] as const;
+  const sections: { key: SectionKey; reverse: boolean }[] = [
+    { key: "vision", reverse: false },
+    { key: "mission", reverse: true },
+    { key: "history", reverse: false },
+  ];
 
   return (
     <>
@@ -44,7 +66,7 @@ export default async function AboutPage({ params }: Props) {
         eyebrow={t("pageEyebrow")}
         title={t("pageTitle")}
         description={t("pageDescription")}
-        image={pageHeroImages.about}
+        mood={pageArt.about.mood}
         breadcrumb={
           <Breadcrumb
             trail={[
@@ -55,62 +77,63 @@ export default async function AboutPage({ params }: Props) {
         }
       />
 
-      {sections.map((section) => (
-        <section
-          key={section.key}
-          className={`py-20 sm:py-24 ${
-            section.key === "mission" ? "bg-cream-100" : "bg-cream"
-          }`}
-        >
-          <Container>
-            <div
-              className={`grid items-center gap-12 lg:gap-16 ${
-                section.reverse
-                  ? "lg:grid-cols-[1fr_1.05fr]"
-                  : "lg:grid-cols-[1.05fr_1fr]"
-              }`}
-            >
-              <AnimatedSection
-                className={section.reverse ? "lg:order-2" : "lg:order-1"}
+      {sections.map((section) => {
+        const Icon = sectionIcons[section.key];
+        return (
+          <section
+            key={section.key}
+            className={`py-20 sm:py-24 ${
+              section.key === "mission" ? "bg-cream-100" : "bg-cream"
+            }`}
+          >
+            <Container>
+              <div
+                className={`grid items-center gap-12 lg:gap-16 ${
+                  section.reverse
+                    ? "lg:grid-cols-[1fr_1.05fr]"
+                    : "lg:grid-cols-[1.05fr_1fr]"
+                }`}
               >
-                <SectionTitle
-                  eyebrow={t(`${section.key}.eyebrow`)}
-                  heading={t(`${section.key}.heading`)}
-                  align="start"
-                />
-                <p className="mt-6 text-base leading-relaxed text-ink/85">
-                  {t(`${section.key}.body`)}
-                </p>
-              </AnimatedSection>
+                <AnimatedSection
+                  className={section.reverse ? "lg:order-2" : "lg:order-1"}
+                >
+                  <SectionTitle
+                    eyebrow={t(`${section.key}.eyebrow`)}
+                    heading={t(`${section.key}.heading`)}
+                    align="start"
+                  />
+                  <p className="mt-6 text-base leading-relaxed text-ink/85">
+                    {t(`${section.key}.body`)}
+                  </p>
+                </AnimatedSection>
 
-              <AnimatedSection
-                delay={0.15}
-                className={section.reverse ? "lg:order-1" : "lg:order-2"}
-              >
-                <div className="relative mx-auto aspect-[4/5] max-w-md">
-                  <div className="arch-frame relative h-full w-full shadow-lift ring-1 ring-primary-100">
-                    <Image
-                      src={section.image}
-                      alt=""
-                      fill
-                      sizes="(min-width: 1024px) 480px, 90vw"
-                      className="object-cover"
+                <AnimatedSection
+                  delay={0.15}
+                  className={section.reverse ? "lg:order-1" : "lg:order-2"}
+                >
+                  <div className="relative mx-auto aspect-[4/5] max-w-md">
+                    <div className="arch-frame relative h-full w-full shadow-lift ring-1 ring-primary-100">
+                      <IslamicArt
+                        mood={sectionMoods[section.key]}
+                        icon={Icon}
+                        frame="arch"
+                      />
+                    </div>
+                    <div
+                      className="pointer-events-none absolute -bottom-6 -end-6 h-32 w-32 rounded-full border-2 border-accent/40"
+                      aria-hidden="true"
+                    />
+                    <div
+                      className="pointer-events-none absolute -top-6 -start-6 h-24 w-24 rounded-full border-2 border-primary/30"
+                      aria-hidden="true"
                     />
                   </div>
-                  <div
-                    className="pointer-events-none absolute -bottom-6 -end-6 h-32 w-32 rounded-full border-2 border-accent/40"
-                    aria-hidden="true"
-                  />
-                  <div
-                    className="pointer-events-none absolute -top-6 -start-6 h-24 w-24 rounded-full border-2 border-primary/30"
-                    aria-hidden="true"
-                  />
-                </div>
-              </AnimatedSection>
-            </div>
-          </Container>
-        </section>
-      ))}
+                </AnimatedSection>
+              </div>
+            </Container>
+          </section>
+        );
+      })}
 
       <StatsCounter />
 

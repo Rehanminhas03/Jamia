@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { ArrowRight } from "lucide-react";
 
@@ -7,7 +6,6 @@ import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { IslamicPattern } from "@/components/ui/IslamicPattern";
 import { AnimatedSection } from "@/components/shared/AnimatedSection";
-import { ctaBackdrop } from "@/lib/data";
 
 export function CTA() {
   const t = useTranslations("home.cta");
@@ -15,18 +13,11 @@ export function CTA() {
 
   return (
     <section className="relative isolate overflow-hidden bg-primary text-cream">
-      <Image
-        src={ctaBackdrop}
-        alt=""
-        fill
-        sizes="100vw"
-        className="-z-20 object-cover"
-      />
       <div
-        className="absolute inset-0 -z-10 bg-gradient-to-b from-primary-900/85 via-primary/90 to-primary-700/95"
+        className="absolute inset-0 -z-20 bg-gradient-to-br from-primary-900 via-primary to-primary-700"
         aria-hidden="true"
       />
-      <div className="absolute inset-0 -z-10 text-cream opacity-[0.08]">
+      <div className="absolute inset-0 -z-10 text-cream opacity-[0.1]">
         <IslamicPattern variant="stars" />
       </div>
       <Container className="py-20 sm:py-24">

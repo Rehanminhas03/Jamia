@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import { PageHero } from "@/components/shared/PageHero";
 import { Breadcrumb } from "@/components/shared/Breadcrumb";
 import { FatwaList } from "@/components/fatwa/FatwaList";
-import { pageHeroImages } from "@/lib/data";
+import { pageArt } from "@/lib/data";
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -25,7 +25,7 @@ export default async function FatwaPage({ params }: Props) {
         eyebrow={t("pageEyebrow")}
         title={t("pageTitle")}
         description={t("pageDescription")}
-        image={pageHeroImages.fatwa}
+        mood={pageArt.fatwa.mood}
         breadcrumb={
           <Breadcrumb
             trail={[

@@ -1,5 +1,9 @@
-// All photo URLs in this file have been verified to return HTTP 200 from
-// images.unsplash.com. If you swap IDs, re-run a curl audit before shipping.
+// Imagery is rendered entirely by the <IslamicArt /> component (SVG-based
+// gradient + geometric pattern + lucide icon). No remote photos are used —
+// this guarantees every visual is on-brand and removes any dependency on
+// third-party image content staying in-context.
+
+import type { IslamicArtMood } from "@/components/ui/IslamicArt";
 
 export type DepartmentIcon =
   | "book-open"
@@ -13,8 +17,8 @@ export type DepartmentIcon =
 
 export type Department = {
   id: string;
-  image: string;
   icon: DepartmentIcon;
+  mood: IslamicArtMood;
 };
 
 export type CourseLevel = "beginner" | "intermediate" | "advanced";
@@ -26,11 +30,13 @@ export type Course = {
   departmentId: string;
 };
 
+export type NewsCategory = "event" | "announcement" | "academic";
+
 export type NewsItem = {
   id: string;
-  category: "event" | "announcement" | "academic";
+  category: NewsCategory;
   date: string;
-  image: string;
+  mood: IslamicArtMood;
 };
 
 export type FatwaCategory = "worship" | "family" | "business" | "contemporary";
@@ -47,11 +53,6 @@ export type Stat = {
   suffix?: string;
 };
 
-export type Principal = {
-  id: "main";
-  image: string;
-};
-
 export type AdmissionStep = {
   id: string;
   number: string;
@@ -62,44 +63,19 @@ export type CoreValue = {
   icon: "heart" | "compass" | "shield" | "lightbulb";
 };
 
-// Verified Islamic-themed Unsplash photos (all return 200 as of build time)
-const photos = {
-  mecca: "https://images.unsplash.com/photo-1542816417-0983c9c9ad53",
-  mosqueInteriorLight:
-    "https://images.unsplash.com/photo-1481627834876-b7833e8f5570",
-  worshippers: "https://images.unsplash.com/photo-1517999144091-3d9dca6d1e43",
-  portrait: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce",
-  domeArchitecture:
-    "https://images.unsplash.com/photo-1541339907198-e08756dedf3f",
-  arabicBooks: "https://images.unsplash.com/photo-1585036156171-384164a8c675",
-  mosqueArches:
-    "https://images.unsplash.com/photo-1583336663277-620dc1996580",
-  islamicCorridor:
-    "https://images.unsplash.com/photo-1560759226-14da22a643ef",
-  handsOnQuran:
-    "https://images.unsplash.com/photo-1605000797499-95a51c5269ae",
-  studyDesk: "https://images.unsplash.com/photo-1496950866446-3253e1470e8e",
-  quranOpen: "https://images.unsplash.com/photo-1564769662533-4f00a87b4056",
-  quranLap: "https://images.unsplash.com/photo-1609599006353-e629aaabfeae",
-} as const;
-
-const wide = (url: string) => `${url}?w=2000&q=80`;
-const card = (url: string) => `${url}?w=1200&q=80`;
-const portrait = (url: string) => `${url}?w=600&q=80`;
-
 export const featuredDepartments: Department[] = [
-  { id: "quran", icon: "book-open", image: card(photos.quranLap) },
-  { id: "hadith", icon: "scroll", image: card(photos.mosqueArches) },
-  { id: "fiqh", icon: "scale", image: card(photos.quranOpen) },
-  { id: "arabic", icon: "feather", image: card(photos.arabicBooks) },
+  { id: "quran", icon: "book-open", mood: "deep" },
+  { id: "hadith", icon: "scroll", mood: "warm" },
+  { id: "fiqh", icon: "scale", mood: "night" },
+  { id: "arabic", icon: "feather", mood: "gold" },
 ];
 
 export const allDepartments: Department[] = [
   ...featuredDepartments,
-  { id: "tafsir", icon: "library", image: card(photos.studyDesk) },
-  { id: "seerah", icon: "sun", image: card(photos.domeArchitecture) },
-  { id: "aqeedah", icon: "star", image: card(photos.islamicCorridor) },
-  { id: "akhlaq", icon: "graduation-cap", image: card(photos.worshippers) },
+  { id: "tafsir", icon: "library", mood: "deep" },
+  { id: "seerah", icon: "sun", mood: "warm" },
+  { id: "aqeedah", icon: "star", mood: "night" },
+  { id: "akhlaq", icon: "graduation-cap", mood: "gold" },
 ];
 
 export const courses: Course[] = [
@@ -118,46 +94,16 @@ export const courses: Course[] = [
 ];
 
 export const latestNews: NewsItem[] = [
-  {
-    id: "annualConvocation",
-    category: "event",
-    date: "2026-04-12",
-    image: card(photos.worshippers),
-  },
-  {
-    id: "newHadithChair",
-    category: "announcement",
-    date: "2026-03-28",
-    image: card(photos.mosqueInteriorLight),
-  },
-  {
-    id: "ramadanProgram",
-    category: "academic",
-    date: "2026-03-02",
-    image: card(photos.mecca),
-  },
+  { id: "annualConvocation", category: "event", date: "2026-04-12", mood: "warm" },
+  { id: "newHadithChair", category: "announcement", date: "2026-03-28", mood: "deep" },
+  { id: "ramadanProgram", category: "academic", date: "2026-03-02", mood: "night" },
 ];
 
 export const allNews: NewsItem[] = [
   ...latestNews,
-  {
-    id: "winterSeminar",
-    category: "event",
-    date: "2026-02-18",
-    image: card(photos.mosqueArches),
-  },
-  {
-    id: "libraryExpansion",
-    category: "announcement",
-    date: "2026-02-04",
-    image: card(photos.arabicBooks),
-  },
-  {
-    id: "intlScholarsVisit",
-    category: "academic",
-    date: "2026-01-21",
-    image: card(photos.handsOnQuran),
-  },
+  { id: "winterSeminar", category: "event", date: "2026-02-18", mood: "gold" },
+  { id: "libraryExpansion", category: "announcement", date: "2026-02-04", mood: "sage" },
+  { id: "intlScholarsVisit", category: "academic", date: "2026-01-21", mood: "deep" },
 ];
 
 export const fatwaItems: FatwaItem[] = [
@@ -178,43 +124,30 @@ export const stats: Stat[] = [
   { id: "graduates", value: 8500, suffix: "+" },
 ];
 
-export const principal: Principal = {
-  id: "main",
-  image: portrait(photos.portrait),
+export const heroSlides: { id: string; mood: IslamicArtMood }[] = [
+  { id: "knowledge", mood: "night" },
+  { id: "calligraphy", mood: "gold" },
+  { id: "students", mood: "deep" },
+];
+
+// Keys used by IslamicArt rendering at the top of each page
+export const pageArt = {
+  home: { mood: "deep" as IslamicArtMood },
+  about: { mood: "night" as IslamicArtMood },
+  departments: { mood: "deep" as IslamicArtMood },
+  courses: { mood: "gold" as IslamicArtMood },
+  admissions: { mood: "warm" as IslamicArtMood },
+  news: { mood: "deep" as IslamicArtMood },
+  fatwa: { mood: "night" as IslamicArtMood },
+  contact: { mood: "warm" as IslamicArtMood },
 };
 
-export const heroSlides = [
-  { id: "knowledge", image: wide(photos.mecca) },
-  { id: "calligraphy", image: wide(photos.handsOnQuran) },
-  { id: "students", image: wide(photos.mosqueInteriorLight) },
-] as const;
-
-// Used in the home Intro section's arched image.
-export const introImage = card(photos.mosqueArches);
-
-export const aboutImages = {
-  vision: card(photos.studyDesk),
-  mission: card(photos.worshippers),
-  history: card(photos.mecca),
+// Icon hints per news category (used for card art)
+export const newsCategoryIcon: Record<NewsCategory, "calendar" | "megaphone" | "graduation-cap"> = {
+  event: "calendar",
+  announcement: "megaphone",
+  academic: "graduation-cap",
 };
-
-// Wide Islamic-themed hero photos used as the background of each PageHero.
-// Each is chosen for thematic fit with its page.
-export const pageHeroImages = {
-  about: wide(photos.mosqueArches),
-  departments: wide(photos.quranLap),
-  courses: wide(photos.arabicBooks),
-  admissions: wide(photos.worshippers),
-  news: wide(photos.mosqueInteriorLight),
-  fatwa: wide(photos.quranOpen),
-  contact: wide(photos.domeArchitecture),
-};
-
-// Backdrop for the home CTA section — soft mosque interior under heavy gradient.
-export const ctaBackdrop = wide(photos.mosqueInteriorLight);
-
-// Backdrop image for the principal's message section.
-export const principalBackdrop = wide(photos.arabicBooks);
 
 export const admissionSteps: AdmissionStep[] = [
   { id: "inquiry", number: "01" },

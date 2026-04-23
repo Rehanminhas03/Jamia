@@ -1,19 +1,32 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLocale, useTranslations } from "next-intl";
-import { CalendarDays, Plus } from "lucide-react";
+import {
+  CalendarDays,
+  Plus,
+  Calendar,
+  Megaphone,
+  GraduationCap,
+} from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
-import { allNews, type NewsItem } from "@/lib/data";
+import { IslamicArt } from "@/components/ui/IslamicArt";
+import { allNews, type NewsItem, type NewsCategory } from "@/lib/data";
 import { cn } from "@/lib/utils";
 
 type Filter = "all" | NewsItem["category"];
 
 const categories: Filter[] = ["all", "event", "announcement", "academic"];
+
+const categoryIcon: Record<NewsCategory, LucideIcon> = {
+  event: Calendar,
+  announcement: Megaphone,
+  academic: GraduationCap,
+};
 
 const PAGE_SIZE = 3;
 
@@ -67,46 +80,43 @@ export function NewsGrid() {
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           <AnimatePresence mode="popLayout">
-            {items.map((item, idx) => (
-              <motion.article
-                key={item.id}
-                layout
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -10 }}
-                transition={{
-                  duration: 0.5,
-                  ease: [0.22, 1, 0.36, 1],
-                  delay: (idx % PAGE_SIZE) * 0.07,
-                }}
-                className="group flex h-full flex-col overflow-hidden rounded-2xl border border-primary-100/60 bg-white shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-lift"
-              >
-                <div className="relative aspect-[16/10] overflow-hidden">
-                  <Image
-                    src={item.image}
-                    alt=""
-                    fill
-                    sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                  <span className="absolute start-4 top-4 inline-flex items-center rounded-full bg-cream/95 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-primary shadow-soft">
-                    {t(`categories.${item.category}`)}
-                  </span>
-                </div>
-                <div className="flex flex-1 flex-col p-6">
-                  <p className="flex items-center gap-2 text-xs text-muted">
-                    <CalendarDays className="h-3.5 w-3.5" aria-hidden="true" />
-                    <span>{dateFormatter.format(new Date(item.date))}</span>
-                  </p>
-                  <h3 className="mt-3 font-display text-xl text-primary">
-                    {t(`items.${item.id}.title`)}
-                  </h3>
-                  <p className="mt-3 flex-1 text-sm leading-relaxed text-muted">
-                    {t(`items.${item.id}.excerpt`)}
-                  </p>
-                </div>
-              </motion.article>
-            ))}
+            {items.map((item, idx) => {
+              const Icon = categoryIcon[item.category];
+              return (
+                <motion.article
+                  key={item.id}
+                  layout
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{
+                    duration: 0.5,
+                    ease: [0.22, 1, 0.36, 1],
+                    delay: (idx % PAGE_SIZE) * 0.07,
+                  }}
+                  className="group flex h-full flex-col overflow-hidden rounded-2xl border border-primary-100/60 bg-white shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-lift"
+                >
+                  <div className="relative aspect-[16/10] overflow-hidden">
+                    <IslamicArt mood={item.mood} icon={Icon} />
+                    <span className="absolute start-4 top-4 inline-flex items-center rounded-full bg-cream/95 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-primary shadow-soft">
+                      {t(`categories.${item.category}`)}
+                    </span>
+                  </div>
+                  <div className="flex flex-1 flex-col p-6">
+                    <p className="flex items-center gap-2 text-xs text-muted">
+                      <CalendarDays className="h-3.5 w-3.5" aria-hidden="true" />
+                      <span>{dateFormatter.format(new Date(item.date))}</span>
+                    </p>
+                    <h3 className="mt-3 font-display text-xl text-primary">
+                      {t(`items.${item.id}.title`)}
+                    </h3>
+                    <p className="mt-3 flex-1 text-sm leading-relaxed text-muted">
+                      {t(`items.${item.id}.excerpt`)}
+                    </p>
+                  </div>
+                </motion.article>
+              );
+            })}
           </AnimatePresence>
         </div>
 
