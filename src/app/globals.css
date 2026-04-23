@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #0F5132;
+  --color-primary-50: #E8F1EC;
+  --color-primary-100: #CFE1D6;
+  --color-primary-600: #0C4328;
+  --color-primary-700: #083320;
+  --color-primary-900: #042316;
+
+  --color-accent: #C9A24B;
+  --color-accent-50: #FBF6E9;
+  --color-accent-600: #B08C3C;
+  --color-accent-700: #8A6D2C;
+
+  --color-cream: #FAF7F0;
+  --color-cream-100: #F4EFE2;
+  --color-ink: #1A1A1A;
+  --color-muted: #6B7280;
+
+  --font-sans: var(--font-plus-jakarta), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-cormorant), "Cormorant Garamond", ui-serif, serif;
+  --font-arabic: var(--font-amiri), "Amiri", "Noto Naskh Arabic", serif;
+  --font-urdu: var(--font-noto-nastaliq), "Noto Nastaliq Urdu", "Jameel Noori Nastaleeq", serif;
+
+  --radius-2xl: 1rem;
+  --shadow-soft: 0 10px 30px -12px rgba(15, 81, 50, 0.18);
+  --shadow-lift: 0 20px 40px -16px rgba(15, 81, 50, 0.25);
+}
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+html[lang="ur"] body {
+  line-height: 2;
+  font-family: var(--font-urdu);
+}
+
+html[lang="ar"] body {
+  line-height: 1.9;
+  font-family: var(--font-arabic);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@utility arch-frame {
+  border-top-left-radius: 9999px;
+  border-top-right-radius: 9999px;
+  overflow: hidden;
+}
+
+@utility pattern-overlay {
+  position: relative;
+  isolation: isolate;
+}
+
+@utility pattern-overlay-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url("/pattern.svg");
+  background-size: 280px;
+  background-repeat: repeat;
+  opacity: 0.06;
+  pointer-events: none;
+  z-index: -1;
+}
+
+@utility ornament-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}

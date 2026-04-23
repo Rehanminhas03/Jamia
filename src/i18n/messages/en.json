@@ -1,0 +1,446 @@
+{
+  "common": {
+    "brand": "Jamia Uloom Islamia",
+    "brandShort": "JUI",
+    "tagline": "A Beacon of Authentic Islamic Scholarship",
+    "readMore": "Read More",
+    "learnMore": "Learn More",
+    "apply": "Apply Now",
+    "exploreCourses": "Explore Courses",
+    "contactUs": "Contact Us",
+    "viewAll": "View All",
+    "backHome": "Back to Home",
+    "loading": "Loading…",
+    "submit": "Submit",
+    "loadMore": "Load More",
+    "search": "Search",
+    "all": "All",
+    "weeks": "weeks",
+    "duration": "Duration",
+    "level": "Level",
+    "category": "Category",
+    "metaTitle": "Jamia Uloom Islamia — Authentic Islamic Education",
+    "metaDescription": "A leading institution dedicated to teaching the Quran, Hadith, Fiqh and Arabic in the tradition of the classical madāris.",
+    "notFound": {
+      "title": "Page not found",
+      "message": "The page you are looking for does not exist or has been moved.",
+      "cta": "Return to home"
+    }
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "departments": "Departments",
+    "courses": "Courses",
+    "admissions": "Admissions",
+    "news": "News & Events",
+    "fatwa": "Fatwa",
+    "contact": "Contact",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "language": "Language"
+  },
+  "footer": {
+    "aboutHeading": "About the Jamia",
+    "aboutBody": "Jamia Uloom Islamia trains scholars in the classical Islamic sciences while preparing them to serve a contemporary world.",
+    "quickLinks": "Quick Links",
+    "departmentsHeading": "Departments",
+    "contactHeading": "Contact",
+    "address": "Banuri Town, Karachi, Pakistan",
+    "phone": "+92 21 1234 5678",
+    "email": "info@jamia-uloom.edu.pk",
+    "followUs": "Follow Us",
+    "rights": "All rights reserved.",
+    "builtBy": "Crafted with care for the seekers of knowledge."
+  },
+  "home": {
+    "hero": {
+      "slides": {
+        "knowledge": {
+          "eyebrow": "Since 1981",
+          "title": "A House of Sacred Knowledge",
+          "subtitle": "Forty-five years of teaching the Book and the Sunnah to the next generation of scholars."
+        },
+        "calligraphy": {
+          "eyebrow": "Tradition Meets Discipline",
+          "title": "Rooted in the Classical Curriculum",
+          "subtitle": "From Tajweed to Tafsir, from Hadith to Fiqh — a curriculum unbroken for centuries."
+        },
+        "students": {
+          "eyebrow": "A Living Community",
+          "title": "Where Scholars Are Formed",
+          "subtitle": "Join a community of students from across the world united by the love of revelation."
+        }
+      }
+    },
+    "intro": {
+      "eyebrow": "Welcome",
+      "heading": "An Education Anchored in Revelation",
+      "body1": "Jamia Uloom Islamia was founded to revive the discipline of the classical Islamic sciences and to nurture scholars who combine deep knowledge with sound character. Our students study the Quran, Hadith, Fiqh and the Arabic language under teachers who themselves trace their teaching chains back through generations.",
+      "body2": "We believe that authentic scholarship requires patience, humility and the company of the righteous. The Jamia is not merely a school but a tarbiyah — a formation of the heart alongside the mind."
+    },
+    "featuredDepts": {
+      "eyebrow": "Our Departments",
+      "heading": "Pillars of the Curriculum",
+      "subheading": "Four core sciences that form the foundation of every graduate's training."
+    },
+    "latestNews": {
+      "eyebrow": "Latest",
+      "heading": "News & Events",
+      "subheading": "Stay close to the life of the Jamia — convocations, lectures, and announcements."
+    },
+    "principal": {
+      "eyebrow": "From the Principal",
+      "name": "Mufti Abdul Rahman",
+      "title": "Principal & Senior Faculty of Hadith",
+      "quote": "Knowledge without sincerity is a burden. We do not ask our students only to memorise — we ask them to live what they learn, so that the light of revelation reaches every corner of their lives."
+    },
+    "cta": {
+      "heading": "Begin Your Journey of Islamic Knowledge",
+      "body": "Admissions are open for the new academic year. Take the first step toward a life shaped by the Quran and the Sunnah.",
+      "button": "Apply Now"
+    }
+  },
+  "departments": {
+    "pageTitle": "Our Departments",
+    "pageEyebrow": "Centres of Learning",
+    "pageDescription": "Eight specialised departments — each rooted in the classical tradition, taught by scholars whose ijazas trace back through unbroken chains of transmission.",
+    "items": {
+      "quran": {
+        "name": "Quran & Tajweed",
+        "short": "Recitation, memorisation and the rules of beautiful recitation.",
+        "long": "Students learn the science of correct recitation through a graded curriculum of Tajweed and Qira'at, alongside structured Hifz programmes for those pursuing memorisation. Teachers are licensed in multiple riwayat."
+      },
+      "hadith": {
+        "name": "Hadith Studies",
+        "short": "The sciences of narration, the canonical collections, and the principles of authentication.",
+        "long": "Students study Sahih al-Bukhari, Sahih Muslim and the four Sunan, alongside Mustalah al-Hadith and the biographies of narrators. Advanced students undertake research into rare narrations and chain analysis."
+      },
+      "fiqh": {
+        "name": "Islamic Jurisprudence (Fiqh)",
+        "short": "The classical schools of law and the principles by which rulings are derived.",
+        "long": "From the foundational manuals of the Hanafi school through Usul al-Fiqh and comparative jurisprudence, students learn how Islamic legal rulings are derived from the Quran, the Sunnah, ijma' and qiyas."
+      },
+      "arabic": {
+        "name": "Arabic Language",
+        "short": "Classical Arabic grammar, morphology and rhetoric — the key to every other science.",
+        "long": "A four-year programme covering Nahw, Sarf, Balagha and classical literature. Students reach the level of reading the Quran's commentaries and the books of Hadith in their original language."
+      },
+      "tafsir": {
+        "name": "Tafsir of the Quran",
+        "short": "Exegesis through the lens of the early commentators and the language of revelation.",
+        "long": "A comprehensive study of the Quran with reference to Tafsir Ibn Kathir, al-Tabari and al-Jalalayn, with attention to the asbab al-nuzul and the linguistic miracle of the Quran."
+      },
+      "seerah": {
+        "name": "Seerah & Islamic History",
+        "short": "The life of the Prophet ﷺ and the unfolding story of the Muslim community.",
+        "long": "From the early biographies of Ibn Hisham and Ibn Ishaq through the era of the rightly-guided caliphs and the great Islamic civilisations, this department gives students a grounded historical perspective."
+      },
+      "aqeedah": {
+        "name": "Aqeedah",
+        "short": "Belief and theology in the way of the People of the Sunnah.",
+        "long": "A study of the foundational texts of Islamic creed, including the works of al-Tahawi and al-Nasafi, alongside engagement with contemporary doctrinal questions."
+      },
+      "akhlaq": {
+        "name": "Tazkiyah & Akhlaq",
+        "short": "Purification of the heart and the formation of noble character.",
+        "long": "Drawing from al-Ghazali's Ihya and the writings of the early ascetics, this department forms the spiritual heart of every student's training. Each student is paired with a teacher for personal guidance."
+      }
+    }
+  },
+  "courses": {
+    "pageTitle": "Courses & Programmes",
+    "pageEyebrow": "Catalogue",
+    "pageDescription": "From short introductions to multi-year specialisations, our programmes are designed for students at every stage of the path of knowledge.",
+    "filters": {
+      "all": "All Levels",
+      "beginner": "Beginner",
+      "intermediate": "Intermediate",
+      "advanced": "Advanced"
+    },
+    "noResults": "No courses match this level — try another filter.",
+    "items": {
+      "tajweedFoundation": {
+        "name": "Tajweed Foundation",
+        "short": "The rules of correct recitation, taught with daily live practice."
+      },
+      "hifzIntro": {
+        "name": "Introduction to Hifz",
+        "short": "A structured first year of Quran memorisation with revision discipline."
+      },
+      "arabicBasics": {
+        "name": "Arabic Basics",
+        "short": "Reading, writing and the foundations of grammar — for non-Arabic speakers."
+      },
+      "seerahSurvey": {
+        "name": "Seerah Survey",
+        "short": "A guided tour of the Prophet's ﷺ life from the early Makkan period to Madinah."
+      },
+      "fiqhWorship": {
+        "name": "Fiqh of Worship",
+        "short": "The detailed rulings of purification, prayer, fasting, zakat and hajj."
+      },
+      "arabicMorphology": {
+        "name": "Arabic Morphology (Sarf)",
+        "short": "Verb patterns, noun patterns and the elegant logic of Arabic word-building."
+      },
+      "hadithPrinciples": {
+        "name": "Principles of Hadith",
+        "short": "An introduction to Mustalah al-Hadith and the science of authentication."
+      },
+      "tafsirIntro": {
+        "name": "Introduction to Tafsir",
+        "short": "Reading the Quran with the early commentators — Tabari, Ibn Kathir, al-Qurtubi."
+      },
+      "advancedFiqh": {
+        "name": "Advanced Fiqh & Usul",
+        "short": "Comparative jurisprudence and the principles by which the four schools derive rulings."
+      },
+      "hadithCritique": {
+        "name": "Hadith Critique & Chains",
+        "short": "Advanced narrator analysis and the critical evaluation of hadith chains."
+      },
+      "advancedTafsir": {
+        "name": "Advanced Tafsir",
+        "short": "Verse-by-verse engagement with the major classical and contemporary commentaries."
+      },
+      "iftaSpecialization": {
+        "name": "Specialisation in Ifta",
+        "short": "Training in the issuing of fatwa — for graduates of the Alimiyya programme."
+      }
+    }
+  },
+  "about": {
+    "pageTitle": "About the Jamia",
+    "pageEyebrow": "Our Story",
+    "pageDescription": "For nearly half a century, Jamia Uloom Islamia has been a home for the patient cultivation of Islamic scholarship. We share that story below.",
+    "vision": {
+      "eyebrow": "Vision",
+      "heading": "A Generation of Sincere Scholars",
+      "body": "We aspire to nurture a generation of scholars whose deep knowledge of the Quran, the Sunnah and the classical sciences is matched by sincerity, humility, and service to the Muslim community wherever they find themselves."
+    },
+    "mission": {
+      "eyebrow": "Mission",
+      "heading": "Authenticity, Discipline, Compassion",
+      "body": "Our mission is to revive and protect the methodology of the classical madrasa — its precision in teaching, its tradition of personal mentorship, and its insistence that knowledge be carried with character. We prepare students to engage the contemporary world from a position of grounded confidence."
+    },
+    "history": {
+      "eyebrow": "History",
+      "heading": "From a Single Room to a Living Institution",
+      "body": "Founded in 1981 by a small circle of scholars in Karachi, the Jamia began with a single classroom and twenty students. Through patient growth and the support of generations of well-wishers, it has become a recognised centre of Islamic learning with students from every continent."
+    },
+    "stats": {
+      "heading": "By the Numbers",
+      "subheading": "A glimpse of the Jamia today.",
+      "students": "Active Students",
+      "teachers": "Faculty",
+      "years": "Years of Service",
+      "graduates": "Lifetime Graduates"
+    },
+    "values": {
+      "heading": "Our Core Values",
+      "subheading": "Four principles that shape every classroom and every interaction.",
+      "items": {
+        "ikhlas": {
+          "title": "Ikhlas",
+          "desc": "Sincerity in seeking knowledge solely for the sake of Allah."
+        },
+        "ittibaa": {
+          "title": "Ittibaa'",
+          "desc": "Faithful adherence to the path of the Prophet ﷺ and his companions."
+        },
+        "amanah": {
+          "title": "Amanah",
+          "desc": "Trustworthiness — in scholarship, in teaching, and in stewardship."
+        },
+        "khidma": {
+          "title": "Khidma",
+          "desc": "Service to the Muslim ummah and to the wider human family."
+        }
+      }
+    }
+  },
+  "admissions": {
+    "pageTitle": "Admissions",
+    "pageEyebrow": "Begin Here",
+    "pageDescription": "We welcome sincere students at every stage. Below is the full admission process, the documents you'll need, and the application form.",
+    "process": {
+      "heading": "The Admission Process",
+      "subheading": "From your first inquiry to your first day in class — a clear path in five steps.",
+      "steps": {
+        "inquiry": {
+          "title": "Inquiry",
+          "desc": "Reach out by phone, email or our contact form to learn about programmes that fit you."
+        },
+        "application": {
+          "title": "Application",
+          "desc": "Submit the application form along with your supporting documents."
+        },
+        "interview": {
+          "title": "Interview",
+          "desc": "A friendly conversation with the admissions committee — in person or online."
+        },
+        "offer": {
+          "title": "Offer of Admission",
+          "desc": "Successful candidates receive a written offer detailing programme, fees and start date."
+        },
+        "enrollment": {
+          "title": "Enrolment",
+          "desc": "Complete enrolment formalities and join the new student orientation week."
+        }
+      }
+    },
+    "eligibility": {
+      "heading": "Eligibility",
+      "items": {
+        "age": "Minimum age of 14 years for the Alimiyya programme; 10 years for Tahfeez.",
+        "education": "Completion of secondary education (or its equivalent) for the Alimiyya track.",
+        "memorisation": "For Tahfeez applicants, basic familiarity with Tajweed is required.",
+        "interview": "All applicants must complete an interview with the admissions committee."
+      }
+    },
+    "documents": {
+      "heading": "Required Documents",
+      "items": {
+        "birthCertificate": "Birth certificate (original + copy)",
+        "academicTranscripts": "Academic transcripts of the most recent qualification",
+        "passportPhotos": "Two recent passport-size photographs",
+        "guardianCnic": "Copy of the parent or guardian's national ID",
+        "referenceLetter": "A reference letter from a teacher or a community scholar"
+      }
+    },
+    "form": {
+      "heading": "Application Form",
+      "subheading": "This is a demo form — submissions are not stored. The live version will email a confirmation.",
+      "name": "Full name",
+      "fatherName": "Father's name",
+      "cnic": "National ID / passport number",
+      "phone": "Phone",
+      "email": "Email",
+      "program": "Programme of interest",
+      "message": "A few words about yourself",
+      "programs": {
+        "alimiyya": "Alimiyya (8-year)",
+        "tahfeez": "Tahfeez al-Quran",
+        "ifta": "Specialisation in Ifta",
+        "arabicLanguage": "Arabic Language Programme",
+        "shortCourse": "Short Course"
+      },
+      "submit": "Submit Application",
+      "successTitle": "Application received",
+      "successBody": "This is a demo — no data was sent. Replace with a real backend before launch."
+    }
+  },
+  "news": {
+    "pageTitle": "News & Events",
+    "pageEyebrow": "Latest",
+    "pageDescription": "Convocations, public lectures, faculty announcements and updates from across the life of the Jamia.",
+    "categories": {
+      "all": "All",
+      "event": "Events",
+      "announcement": "Announcements",
+      "academic": "Academic"
+    },
+    "items": {
+      "annualConvocation": {
+        "title": "Annual Convocation Welcomes New Graduates",
+        "excerpt": "Two hundred new scholars received their degrees in this year's convocation, attended by visiting ulema from across the region."
+      },
+      "newHadithChair": {
+        "title": "Jamia Establishes a New Chair in Hadith Sciences",
+        "excerpt": "A dedicated chair will support advanced research in the principles of narration and the study of the Six Books."
+      },
+      "ramadanProgram": {
+        "title": "Special Ramadan Programme Announced",
+        "excerpt": "Nightly tafsir sittings, intensive memorisation circles, and a community iftar — every evening of the blessed month."
+      },
+      "winterSeminar": {
+        "title": "Winter Seminar on Classical Fiqh",
+        "excerpt": "A week-long intensive on the foundational manuals of the Hanafi school — open to advanced students and visiting researchers."
+      },
+      "libraryExpansion": {
+        "title": "Library Expansion Adds Three Thousand Volumes",
+        "excerpt": "Newly catalogued holdings include rare manuscripts of Hadith commentary and historical works in classical Arabic."
+      },
+      "intlScholarsVisit": {
+        "title": "International Scholars Visit for Joint Lecture Series",
+        "excerpt": "Visiting professors from Madinah, Cairo and Istanbul delivered a series of public lectures on contemporary scholarly questions."
+      }
+    }
+  },
+  "fatwa": {
+    "pageTitle": "Fatwa & Research",
+    "pageEyebrow": "Dar al-Ifta",
+    "pageDescription": "A growing archive of researched answers to questions of worship, family life, business and contemporary affairs — issued by the Jamia's senior muftis.",
+    "searchPlaceholder": "Search by keyword (demo)",
+    "categories": {
+      "heading": "Categories",
+      "all": "All categories",
+      "worship": "Worship",
+      "family": "Family",
+      "business": "Business",
+      "contemporary": "Contemporary"
+    },
+    "noResults": "No questions in this category yet.",
+    "items": {
+      "wuduOnSocks": {
+        "question": "Can one wipe over socks during wudu?",
+        "answer": "Yes, wiping over leather or thick socks (khuffayn) is permitted within the conditions established in the books of Fiqh — namely, that the socks were worn in a state of wudu and that the duration limit (one day for residents, three for travellers) has not elapsed."
+      },
+      "zakatOnGold": {
+        "question": "Is zakat due on gold jewellery used for adornment?",
+        "answer": "The four classical schools differ. The dominant Hanafi position requires zakat on gold once it reaches the nisab (approximately 87.48 grams), even when used as personal jewellery. We advise consulting a local mufti for your specific situation."
+      },
+      "marriageWali": {
+        "question": "Is the consent of a wali required for marriage?",
+        "answer": "The Hanafi school permits an adult sane woman to contract her own marriage, while the other three schools require a wali. In practice, the involvement of the wali brings stability and is strongly recommended in all schools."
+      },
+      "inheritanceShares": {
+        "question": "How are inheritance shares calculated?",
+        "answer": "Islamic inheritance follows fixed shares prescribed in Surah al-Nisa, with adjustments made by qualified scholars. We strongly recommend consulting a qualified mufti or specialised inheritance scholar before distributing an estate."
+      },
+      "interestFreeLoans": {
+        "question": "Are interest-free loans from a bank permissible?",
+        "answer": "Yes, provided no riba is charged in any form — including hidden fees that effectively function as interest. Genuine qard hasan is encouraged; vigilance about hidden conditions is required."
+      },
+      "salaryFromBank": {
+        "question": "Is it permissible to work for a conventional bank?",
+        "answer": "Roles directly involved in interest-based transactions are generally impermissible. Roles in pure administration, IT, security or compliance — where the employee has no direct hand in riba — are viewed differently by contemporary scholars; consult a mufti about your specific role."
+      },
+      "cryptoTrading": {
+        "question": "What is the ruling on trading cryptocurrencies?",
+        "answer": "Contemporary muftis differ. Some permit it as a recognised medium of exchange when treated like any other asset (avoiding excessive speculation), while others advise caution due to extreme volatility and unclear underlying value. Begin with caution and consult a knowledgeable scholar."
+      },
+      "vaccineRulings": {
+        "question": "Are vaccines permissible from an Islamic perspective?",
+        "answer": "Vaccines are generally permissible and indeed encouraged when they protect health and serve the public good. Where ingredients are a concern, the principle of necessity (darura) and the absence of practical alternatives are relevant considerations."
+      }
+    }
+  },
+  "contact": {
+    "pageTitle": "Contact Us",
+    "pageEyebrow": "Get in Touch",
+    "pageDescription": "Whether you'd like to apply, visit the campus, request a publication, or simply ask a question — we'd be delighted to hear from you.",
+    "info": {
+      "heading": "Contact Information",
+      "addressLabel": "Address",
+      "phoneLabel": "Phone",
+      "emailLabel": "Email",
+      "hoursLabel": "Office Hours",
+      "weekday": "Sat – Thu · 8:00 – 17:00",
+      "weekend": "Friday · 8:00 – 12:00"
+    },
+    "form": {
+      "heading": "Send a Message",
+      "subheading": "This is a demo form — submissions are not stored.",
+      "name": "Full name",
+      "email": "Email",
+      "phone": "Phone (optional)",
+      "subject": "Subject",
+      "message": "Your message",
+      "submit": "Send Message",
+      "successTitle": "Message received",
+      "successBody": "This is a demo — no data was sent."
+    }
+  }
+}
